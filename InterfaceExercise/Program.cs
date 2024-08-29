@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace InterfaceExercise
 {
@@ -6,44 +7,58 @@ namespace InterfaceExercise
     {
         static void Main(string[] args)
         {
-            //TODO Be sure to follow BEST PRACTICES when creating classes and interfaces
-
-            //Create 2 Interfaces called IVehicle & ICompany
-
-            //Create 3 classes called Car , Truck , & SUV
-
-            //In your IVehicle:
+            //My car
+            var myCar = new Car();
+            myCar.NumberOfWheels = 4;
+            myCar. NumberofSeats = 4;
+            myCar.Size = 1;
+            myCar.HasTrunk = true;
+            myCar.HasEngine = true;
+            myCar.EngineNoise = "Medium";
+            myCar.CompanyName = "Nissan";
+            myCar.Logo = "cicle shaped";
             
-                /* Create 4 members that Car, Truck, & SUV all have in common.
-                 * Example: public int NumberOfWheels { get; set; }
-                 */
+            myCar.VehicleProperties();
+            myCar.Company();
             
-
-            //In ICompany: 
             
-                /* Create 2 members that are specific to each every company
-                 * regardless of vehicle type.
-                 * Example: public string Logo { get; set; }
-                 */
+            //My truck
+            Truck myTruck = new Truck()
+            {
+                NumberOfWheels = 10,
+                NumberofSeats = 2,
+                Size = 1,
+                HasTrunk = false,
+                TruckEngine = true,
+                TruckType = "18 wheeler",
+                CompanyName = "JB Hunt",
+                Logo = "Bold"
 
-            //In each of your Car, Truck, and SUV classes
-
-                /* Create 2 members that are specific to each class
-                 * Example for Car: public bool HasTrunk { get; set; }
-                 * Example for SUV: public int NumberOfSeats { get; set; }
-                 *
-                 * Then, Set each class to inherit from both IVehicle and ICompany and implement their members.
-                 */
-
-            //Now, create objects of your 3 classes and give their members values.
-            //Creatively display and organize their values
+            };
+            myTruck.VehicleProperties();
+            myTruck.Company();
             
-            //Option for displaying values: 
-            //Create a stubbed out method called DisplayDetails in your IVehicle interface.
-            //Implement the stubbed out method in the derived classes.
-            //In the scope of them method, use string interpolation to display property values.
-            //In order to also interpolate values from ICompany, research how to extend interfaces.
             
+            //My SUV
+            SUV mySUV = new SUV()
+            {
+                NumberOfWheels = 4,
+                NumberofSeats = 6,
+                Size = 2,
+                HasTrunk = true,
+                HasFourWheelDrive = true,
+                HasSunRoof = true,
+                CompanyName = "Audi",
+                Logo = "olympic"
+
+            };
+            
+            mySUV.VehicleProperties();
+            mySUV.Company();
+
+
+
+
         }
     }
 }
